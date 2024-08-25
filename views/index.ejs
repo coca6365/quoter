@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quoter</title>
+  <link rel="shortcut icon" href="/images/willpower.png" type="image/x-icon">
+
+  <!-- Link to external stylesheet -->
+  <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="form">
+      <form action="/subscribe" method="post">
+        <span class="title">Receive Daily Motivational Quotes</span>
+        <p class="description">Elevate your day with inspiring quotes delivered straight to your inbox. Created by <a href="https://www.linkedin.com/in/jay-pokharna-940a42207/">Jay Pokharna</a>.</p>
+        <div>
+          <input class="input-box" placeholder="Enter your email" type="email" name="email" id="email-address" required>
+          <span class="underline"></span>
+          <button type="submit">Subscribe</button>
+        </div>
+
+        <!-- Categories checkboxes -->
+        <label id="catlable">Categories:</label>
+        <div class="categories">
+          <!-- Coding category -->
+          <input type="checkbox" id="coding" name="coding" value="coding">
+          <label for="coding">Coding</label>
+
+          <!-- Sports category -->
+          <input type="checkbox" id="sports" name="sports" value="sports">
+          <label for="sports">Sports</label>
+
+          <!-- Fashion category -->
+          <input type="checkbox" id="fashion" name="fashion" value="fashion">
+          <label for="fashion">Fashion</label>
+
+          <!-- Business category -->
+          <input type="checkbox" id="business" name="business" value="business">
+          <label for="business">Business</label>
+
+          <!-- Exams category -->
+          <input type="checkbox" id="exams" name="exams" value="exams">
+          <label for="exams">Exams</label>
+
+          <!-- Trading category -->
+          <input type="checkbox" id="trading" name="trading" value="trading">
+          <label for="trading">Trading</label>
+
+          <!-- Add more checkboxes for other categories as needed -->
+        </div>
+      </form>
+    </div>
+    
+    <% if (successFlash && successFlash.length > 0) { %>
+      <div class="alert alert-success" id="successAlert">
+        <%= successFlash[0] %>
+      </div>
+    <% } %>
+    
+    <% if (errorFlash && errorFlash.length > 0) { %>
+      <div class="alert alert-danger" id="errorAlert">
+        <%= errorFlash[0] %>
+      </div>
+    <% } %>
+  </div>
+  <script src="/javascripts/alerts.js"></script>
+</body>
+</html>
